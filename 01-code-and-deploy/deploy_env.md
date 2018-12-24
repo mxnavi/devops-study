@@ -25,4 +25,4 @@
 
 ⚠️**【不推荐】部署集群** 也可以对 部署环境 进行补充，例如 生产环境「PRO」中想搭建预生产环境「PRE PRO」，由于目前无法自定义部署环境，可以使用部署集群代替。
 
-🚫**【现状，但后续禁止】部署集群** 不得用于区分项目、采样等其他维度，使用[服务ID](01-code-and-deploy/code-code-base-service-version-rule.md#服务ID、服务标识、服务)的方式进行区别。
+🚫**【现状，但后续禁止】部署集群** 不得用于区分项目、采样等其他维度，使用[服务ID](01-code-and-deploy/code-code-base-service-version-rule.md#服务id服务标识服务)的方式进行区别。
