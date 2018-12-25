@@ -121,9 +121,21 @@ kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04
   以 “jason” 用户名登录, 应该能立即看到页面加载”产品评级不可用”消息。 从用户 “jason” 注销，您应该会在产品页面网页上看到评级星标的评论成功显示。
 
 
-### 金丝雀发布
+### 补充内容
 
-Istio流量控制结合Kubernetes HPA 功能可以做到金丝雀发布，[查看详情](https://istio.io/blog/2017/0.1-canary/)
+流量控制更多方法，可以查看:
+
+https://blog.csdn.net/ybt_c_index/article/details/80249810
+
+https://istio.io/docs/examples/bookinfo/
+
+配置项文档：
+
+https://istio.io/docs/reference/config/istio.networking.v1alpha3/
+
+金丝雀发布：Istio流量控制结合Kubernetes HPA 功能可以做到金丝雀发布：
+
+https://istio.io/blog/2017/0.1-canary/
 
 
 ### [下一节 BookInfo配置清理](istio-book-info-demo-clean.md)
