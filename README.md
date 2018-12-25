@@ -18,6 +18,7 @@
 
 ## 四、Istio [Service Mesh] 服务网格 [建设中]
 ### [4-1）Service Mesh Istio 介绍](04-service-mesh-istio/istio-intro.md)
+### [4-2）Istio 使用样例 BookInfo](04-service-mesh-istio/istio-book-info-demo.md)
 
 
 

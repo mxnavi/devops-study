@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: bootinfo
+spec:
+  rules:
+  - host: bookinfo.demo-istio.mxnavi.com
+    http:
+      paths:
+      - backend:
+          serviceName: productpage
+          servicePort: 9080
