@@ -61,6 +61,14 @@ kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04
   kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-jason-to-v2-other-to-v1.yaml
   ```
   
+  **点击页面右上角 Sign in ， 用户名：jason ，密码随意**
+  
+  ![bookinfo](images/bookinfo-use-jason-login.jpg)
+  
+  **登录后，页面只会访问到 v2 黑色打分，右上角点击 sign out 登出**
+  
+  ![bookinfo](images/bookinfo-use-jason-login-success.jpg)
+  
 **基于内容的路由原理：**
 
 Istio 可以基于 Http1.1 的 Header 内容 和 Http2 的 Header 内容进行路由转发，我们设计程序时，可以在Header中预留一些埋点
@@ -80,6 +88,8 @@ kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04
   以 “jason” 用户身份登录。如果应用程序的首页设置为正确处理延迟，我们预计它将在大约 7 秒内加载。 要查看网页响应时间，请在IE，Chrome 或 Firefox 中打开 Developer Tools 菜单（通常，组合键 Ctrl+Shift+I 或 Alt+Cmd+I ）， 选项卡 Network，然后重新加载 productpage 网页 。
 
   您将看到网页加载大约 6 秒钟。评论部分将显示 对不起，此书的产品评论目前不可用 。
+  
+  ![bookinfo](images/bookinfo-test-delay.jpg)
   
   
 * 了解发生了什么
@@ -101,6 +111,10 @@ kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04
   ```
   kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml
   ```
+
+
+  ![bookinfo](images/bookinfo-test-abort.jpg)
+  
 
 * 观察应用程序行为
   
