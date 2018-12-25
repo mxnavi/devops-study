@@ -26,7 +26,7 @@ Sidecar 在软件系统架构中特指边车模式。这个模式的灵感来源
 
 Service Mesh 这个服务网络专注于处理服务和服务间的通讯。其主要负责构造一个稳定可靠的服务通讯的基础设施，并让整个架构更为的先进和 Cloud Native。在工程中，Service Mesh 基本来说是一组轻量级的与应用逻辑服务部署在一起的服务代理，并且对于应用服务是透明的。
 
-###ServiceMesh 特点
+### ServiceMesh 特点
 
 * 是一个基础设施
 * 轻量级网络代理，应用程序间通讯的中间层
@@ -34,7 +34,7 @@ Service Mesh 这个服务网络专注于处理服务和服务间的通讯。其�
 * 解耦应用程序的重试/超时、监控、追踪和服务发现等控制层面的东西
 
 
-###ServiceMesh 发展
+### ServiceMesh 发展
 
 Service Mesh 的概念从2016年提出至今，已经发展到了第二代。
 
@@ -44,7 +44,7 @@ Linkerd 使用Scala编写，是业界第一个开源的service mesh方案。作�
 
 第二代service mesh主要改进集中在更加强大的控制面功能（与之对应的 sidecar proxy 被称之为数据面），典型代表有 Istio 和 Conduit。
 
-###ISTIO 解析
+### ISTIO 解析
 
 Istio 是 Google 和 IBM 两位巨人联合 Lyft 的合作开源项目。是当前最主流的service mesh方案，也是事实上的第二代 service mesh 标准。
 
