@@ -19,7 +19,7 @@ reviews 微服务有 3 个版本：
 
 服务调用图如下：
 
-![bookinfo](images/bookinfo-end-to-end.svg)
+![bookinfo](images/bookinfo-end-to-end.jpg)
 
 Bookinfo 是一个异构应用，几个微服务是由不同的语言编写的。这些服务对 Istio 并无依赖，但是构成了一个有代表性的服务网格的例子：它由多个服务、多个语言构成，并且 reviews 服务具有多个版本。
 
