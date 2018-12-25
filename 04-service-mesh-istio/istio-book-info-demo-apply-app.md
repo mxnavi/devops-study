@@ -16,7 +16,13 @@
 
 ### 运行应用
 
-```kubectl apply -n {namespace} -f  ```
+* 创建 BookInfo 所有应用
+
+  ⚠️注意替换 {namespace} 
+> 
+```kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/platform/kube/bookinfo.yaml ```
+
+
 
 官方文档：
 https://istio.io/zh/docs/examples/bookinfo/
