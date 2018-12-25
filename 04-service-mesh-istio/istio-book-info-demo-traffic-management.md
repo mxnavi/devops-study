@@ -6,7 +6,7 @@
 
 ### Istio 接手 reviews 流量
   
-  ```kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-reviews-all-version.yaml```
+  ```kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-reviews-all-version.yaml```
   
   Istio 仅仅接手 reviews （显示打分星）的流量，功能上与Kubernetes的Service一致，轮询分发到 reviews v1 - v3 服务上
 
@@ -16,7 +16,7 @@
 * 将所有流量转发到 reviews v1 上:
 
   ```
-kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-all-to-v1.yaml
+kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-all-to-v1.yaml
   ```
   
   查看页面，所有的reviews不再显示 打分星
@@ -27,7 +27,7 @@ kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-
 * 将所有流量转发到 reviews v2 上:
 
   ```
-  kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-all-to-v2.yaml
+  kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-all-to-v2.yaml
   ```
   查看页面，所有的reviews显示 黑色打分星
   
@@ -37,7 +37,7 @@ kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-
 * 将所有流量转发到 reviews v3 上：
 
   ```
-  kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-all-to-v3.yaml
+  kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-all-to-v3.yaml
   ```
   
   查看页面，所有的reviews显示 红色打分星
@@ -48,7 +48,7 @@ kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-
 * 将流量 50% 转发到 v1 、 50% 转发到 v3 [根据权重分配流量]
 
   ```
-  kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
+  kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
   ```
   
 ### 控制流量，基于内容的路由
@@ -58,7 +58,7 @@ kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-
 * 仅控制 jason 用户访问v2版本
   
   ```
-  kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-jason-to-v2-other-to-v1.yaml
+  kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/mxnavi-demo-istio/bookinfo/bookinfo-jason-to-v2-other-to-v1.yaml
   ```
   
 **基于内容的路由原理：**
@@ -72,7 +72,7 @@ Istio 可以基于 Http1.1 的 Header 内容 和 Http2 的 Header 内容进行�
 * 创建故障注入规则以延迟来自用户 “jason”（我们的测试用户）的流量[ 规则可能需要几秒钟才能传播到所有的pod ]
 
   ```
-kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/networking/virtual-service-ratings-test-delay.yaml
+kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/networking/virtual-service-ratings-test-delay.yaml
   ```
 
 * 观察应用程序行为
@@ -99,7 +99,7 @@ kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-
 * 为用户 “jason” 创建故障注入规则发送 HTTP 中止
   
   ```
-  kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml
+  kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml
   ```
 
 * 观察应用程序行为

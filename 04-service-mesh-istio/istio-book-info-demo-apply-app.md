@@ -17,14 +17,12 @@
 ### 运行应用
 
 * 创建 BookInfo 所有应用
-
-  ⚠️ 注意替换 {namespace} 成 实验环境的namespace名字
   
-  ```kubectl apply -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/platform/kube/bookinfo.yaml ```
+  ```kubectl apply -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/platform/kube/bookinfo.yaml ```
   
 * 创建 ingress ，让我们可以访问到该应用：
 
-  ⚠️ 注意需要替换文件和命令 {namespace} 
+  ⚠️ 注意需要替换文件 {namespace} 变量为 你的空间名字
     
   编写文件内容：
   
@@ -47,12 +45,12 @@
   
   随后执行：
   ```
-  kubectl apply -n {namespace} -f ingress.yaml
+  kubectl apply -f ingress.yaml
   ```
   
 * 访问地址：
   
-  ⚠️ 注意修改 {namespace} 为空间名称
+  ⚠️ 注意 {namespace} 为空间名称
   
   ```
   http://bookinfo.{namespace}.k8s-project.mxnavi.com/productpage
@@ -68,8 +66,8 @@
 
 🚫 删除可以通过以下命令：
 ```
-kubectl delete -n {namespace} ingress bootinfo
-kubectl delete -n {namespace} -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/platform/kube/bookinfo.yaml
+kubectl delete ingress bootinfo
+kubectl delete -f https://raw.githubusercontent.com/mxnavi/devops-study/master/04-service-mesh-istio/mxnavi-istio-yaml/bookinfo/samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
 

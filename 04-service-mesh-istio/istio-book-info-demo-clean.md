@@ -5,9 +5,9 @@
 * 获得我们创建的规则
 
   ```
-  kubectl get -n demo-istio  destinationrule
+  kubectl get destinationrule
   ```
 
   ```
-  kubectl get -n demo-istio  virtualservices
+  kubectl get virtualservices
   ```
