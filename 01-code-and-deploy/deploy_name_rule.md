@@ -12,7 +12,11 @@
   * data-collect-proxy
   * data-collect-proxy-0.0.2  #可用于ServiceMesh支持灰度、金丝雀升级
 
-* Service 名称： data-collect-proxy ，Service名称用于服务之间相互访问，不得与版本信息相关
+* Service 名称： 
+  * data-collect-proxy #如果仅仅支持一个协议，直接使用服务ID即可
+  * data-collect-proxy-grpc #如果同时支持多个协议，可以用协议作为后缀【目前支持 http（默认）、http2、grpc】
+  
+  ⚠️ Service名称用于服务之间相互访问，不得与版本信息相关
 
 * Ingress 名称： data-collect-proxy.data-support-cns3.k8s-project.mxnavi.com 【其中 k8s-project 为 k8s 名称，沈阳机房、铜牛机房、阿里云机房都会有不同的名字】 
 
